@@ -1,0 +1,66 @@
+Export Interface User {
+ name: string;
+ age: string;
+ email: string;
+ password: string;
+ phone?: string;
+ address: string;
+ city?: string;
+}
+
+https://www.typescriptlang.org/docs/handbook/utility-types.html
+
+
+Using Omit:
+
+ type userProfile = Omit<User, "password" | "email">   ---> we can omit password and email . 
+
+ interface UesrProfileInterface extends   Omit<User, "password" | "email"> {}
+
+
+-----------------
+
+Using Pick:
+
+ type userProfilePick =Pick<User , "phone" | "email" | "address">  ---> pick only these parameters
+
+----------------
+
+Using Partial: 
+
+ type userPartialFully = Partial<User>. --> entire object will be the optional
+ type userPartial = Partial <User> & {name :string}
+
+
+----------------------
+
+Using Required:
+
+ type UserRequiredFully = Required <User>   ---> make entire object as mandatory
+
+ type userRequired = Required <User> & {city?: string}
+
+----------------
+
+Using Record:
+
+
+
+
+-------------
+
+Using Parameters:
+
+ function createUser(name:string,password:string){
+ return{name, password}
+}
+
+
+Type createInputUser= Parameters<typeof createUser>;
+
+  const data:createInputUser = ["santu","123"]
+
+createUser(…data)
+
+
+-------

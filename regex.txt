@@ -1,0 +1,58 @@
+/ /g -> golbal search
+
+I -> case sensitive
+
+[] --> match
+^ -> don't match
+
+
+
+
+_keyUp(event: { key: string; }): boolean {
+    const patt = /^([0-9])$/;
+    const result = patt.test(event.key);
+    return result;
+  }
+
+
+
+
+
+
+
+
+
+
+function generateRangeValidator(min, max) {
+  // Escape special characters in min and max
+  const escapedMin = escapeRegExp(min.toString());
+  const escapedMax = escapeRegExp(max.toString());
+  // Create the regex pattern dynamically
+  const pattern = new RegExp(`^[-+]?\\d*\\.?\\d+([eE][-+]?\\d+)?$`);
+  
+  // Return a function that checks if a value is within the specified range
+  return function (value) {
+    const numericValue = parseFloat(value);
+    return !isNaN(numericValue) && numericValue >= min && numericValue <= max;
+  };
+}
+function escapeRegExp(string) {
+  return string.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+}
+// Example usage:
+const validateRange = generateRangeValidator(5, 10);
+console.log(validateRange(4));   // true
+
+
+[ ]?  -->  occurs 0 or 1 time
+[ ]+  --> occurs 1 or more time
+[ ]*. ---> occurs 0 or more time
+[ ]{n} --> occurs n times
+[ ]{n,} ---> occurs n or more times
+[ ] {y, z} --> occurs at least y times but less than z times
+
+
+\d --> [0-9]
+\D  --> [^0-9]
+\w--> [a-zA-z_0-9]
+\W --> [^\w]
