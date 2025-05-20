@@ -1,0 +1,555 @@
+1. What is React?
+React is a JavaScript library for building user interfaces. It is maintained by Facebook and a community of individual developers and companies. React can be used as a base in the development of single-page or mobile applications.
+
+2. What are the features of React?
+	• JSX: JavaScript XML, a syntax extension for JavaScript.
+	• Components: Building blocks of a React application.
+	• Virtual DOM: A lightweight copy of the actual DOM.
+	• One-way Data Binding: Data flows in one direction.
+	• Performance: React uses techniques like virtual DOM diffing to optimize performance.
+
+3. What is JSX?
+JSX stands for JavaScript XML. It allows us to write HTML in React. JSX makes it easier to write and add HTML in React.
+4. What are components in React?
+Components are the building blocks of a React application. They can be class-based or functional. Components can be nested, managed, and handled independently.
+5. What is the difference between state and props?
+	• State: State is a built-in object that stores property values that belong to a component. When the state object changes, the component re-renders.
+	• Props: Props (short for properties) are read-only attributes used to pass data from one component to another.
+6. What is the virtual DOM?
+The virtual DOM is a programming concept where a virtual representation of the UI is kept in memory and synced with the real DOM by a library such as ReactDOM. This process is called reconciliation
+Reconciliation
+
+Reconciliation is a process in React that determines how the UI should be updated in response to changes in state or props. React uses a virtual DOM to optimize this process, making updates more efficient.
+How Reconciliation Works
+	1. Virtual DOM: React maintains a virtual DOM, which is a lightweight copy of the actual DOM. When the state or props of a component change, React creates a new virtual DOM tree.
+	2. Diffing Algorithm: React uses a diffing algorithm to compare the new virtual DOM tree with the previous one. This algorithm identifies the minimum number of changes required to update the real DOM to match the new virtual DOM.
+	3. Updating the Real DOM: Based on the differences identified, React updates the real DOM. This process is efficient because React only updates the parts of the DOM that have actually changed.
+Key Concepts in Reconciliation
+	1. Keys: Keys are crucial for efficient reconciliation. They help React identify which items have changed, been added, or been removed. Keys should be unique among siblings.
+const listItems = items.map((item) => <li key={item.id}>{item.name}</li>);
+	2. Component Types: If the component type (e.g., div, span, MyComponent) changes, React will unmount the old component and mount a new one. If the type remains the same, React will update the existing component.
+	3. Element Types: If the element type changes (e.g., from a div to a span), React will destroy the old element and create a new one.
+	4. State and Props: When state or props change, React re-renders the component and its children. The diffing algorithm then determines the minimal set of changes needed.
+
+Reconciliation is a key feature of React that ensures efficient updates to the UI. By using a virtual DOM and a diffing algorithm, React minimizes the number of changes needed to keep the UI in sync with the state and props, resulting in better performance and a smoother user experience.
+
+7. What are hooks in React?
+Hooks are functions that let you use state and other React features in functional components. Examples include useState, useEffect, useContext, etc.
+8. What is the use of useState hook?
+The useState hook is used to add state to functional components. It returns an array with two elements: the current state value and a function to update it.
+9. What is the use of useEffect hook?
+The useEffect hook lets you perform side effects in functional components. It serves the same purpose as componentDidMount, componentDidUpdate, and componentWillUnmount in class components.
+10.useMemo?
+The useMemo hook in React is used to memoize the result of a computation, so that it is only recalculated when one of its dependencies changes. This can help improve performance by avoiding unnecessary recalculations on every render.
+11.useCallback?
+The useCallback hook in React is used to memoize a callback function, so that it is only recreated when one of its dependencies changes. This can help improve performance by preventing unnecessary re-creations of functions, especially when passing callbacks to child components that rely on reference equality to prevent unnecessary renders.
+12.React.memo?
+The memo function in React is used to create a memoized component. This means that the component will only re-render if its props change. This can help improve performance by preventing unnecessary re-renders of components that receive the same props.
+When to Use memo
+	• When you have functional components that receive props and you want to prevent unnecessary re-renders.
+	• When you want to optimize performance by memoizing components that do not need to re-render unless their props change.
+Use React.memo to optimize performance by memoizing components that do not need to re-render on every parent component update.
+
+13. How do you handle events in React?
+Events in React are handled using camelCase syntax and passing a function as the event handler. For example:
+<button onClick={handleClick}>Click me</button>
+14. What is Redux?
+Redux is a predictable state container for JavaScript apps. It helps you write applications that behave consistently, run in different environments, and are easy to test.
+15. What is the difference between a controlled and uncontrolled component?
+	• Controlled Component: A component that renders form elements and controls them by keeping the form data in the component's state.
+	• Uncontrolled Component: A component that renders form elements but does not control them. The form data is handled by the DOM itself.
+16. What is the context API?
+The Context API is a React structure that enables you to exchange unique details and assists in solving prop-drilling from all levels of your application.
+17. What is prop drilling and how can you avoid it?
+Prop drilling is the process of passing data from a parent component to a deeply nested child component through multiple layers of components. It can be avoided using the Context API or state management libraries like Redux.
+18. What are higher-order components (HOC)?
+A higher-order component is a function that takes a component and returns a new component. HOCs are used to reuse component logic.?
+
+19. How do you optimize performance in a React application?
+Answer: Some techniques to optimize performance in React applications include:
+	• Using React.memo to memoize functional components.
+	• Using useMemo and useCallback hooks to memoize values and functions.
+	• Code-splitting with React.lazy and Suspense.
+	• Avoiding unnecessary re-renders by using shouldComponentUpdate or PureComponent.
+	• Using the Context API or state management libraries like Redux to manage state efficiently.
+
+20.Lazy Loading
+
+Lazy loading is a design pattern that delays the loading of resources until they are actually needed. In the context of React, lazy loading is used to load components only when they are required, which can improve the performance of an application by reducing the initial load time.
+React.lazy
+React provides a built-in function called React.lazy to enable lazy loading of components. It allows you to render a dynamic import as a regular component.
+Explanation
+	• React.lazy: The React.lazy function takes a function that returns a dynamic import and returns a component that can be rendered.
+	• Suspense: The Suspense component is used to wrap the lazy-loaded component. It takes a fallback prop that specifies what to render while the lazy-loaded component is being loaded.
+Benefits of Lazy Loading
+	• Improved Performance: By loading components only when they are needed, the initial load time of the application is reduced.
+	• Reduced Bundle Size: Lazy loading helps in splitting the code into smaller chunks, which can be loaded on demand, reducing the overall bundle size.
+	• Better User Experience: Users can start interacting with the application sooner, as only the necessary components are loaded initially.
+When to Use Lazy Loading
+	• For large components or pages that are not immediately needed.
+	• For components that are conditionally rendered based on user actions.
+	• For routes in a single-page application (SPA) to load only the necessary route components.
+Lazy loading is a powerful technique to optimize the performance of React applications by loading components only when they are needed.
+
+21.React architecture
+
+React typically follows a component-based architecture. Here are the key concepts:
+	1. Components: The building blocks of a React application. Components can be functional or class-based.
+	2. State and Props: State is managed within a component, while props are used to pass data between components.
+	3. Lifecycle Methods: Methods that allow you to hook into different stages of a component's lifecycle (only applicable to class components).
+	4. Hooks: Functions that let you use state and other React features in functional components.
+	5. Context: Provides a way to pass data through the component tree without having to pass props down manually at every level.
+	6. Redux or Context API: For state management in larger applications.
+
+
+Erorr bounday
+
+Error boundaries are React components that catch JavaScript errors anywhere in their child component tree, log those errors, and display a fallback UI instead of the component tree that crashed. Error boundaries catch errors during rendering, in lifecycle methods, and in constructors of the whole tree below them.
+To implement an error boundary in React, you need to create a class component that defines either static getDerivedStateFromError() or componentDidCatch() (or both).
+Step 1: Create the Error Boundary Component
+
+
+export React, { Component } from 'react';
+class ErrorBoundary extends Component {
+  constructor(props) {
+    super(props);
+    this.state = { hasError: false };
+  }
+  static getDerivedStateFromError(error) {
+    // Update state so the next render will show the fallback UI.
+    return { hasError: true };
+  }
+  componentDidCatch(error, errorInfo) {
+    // You can also log the error to an error reporting service
+    console.error("Error caught by ErrorBoundary:", error, errorInfo);
+  }
+  render() {
+    if (this.state.hasError) {
+      // You can render any custom fallback UI
+      return <h1>Something went wrong.</h1>;
+    }
+    return this.props.children; 
+  }
+}
+export default ErrorBoundary;
+
+
+Step 2: Use the Error Boundary Component
+Wrap the components that you want to protect with the ErrorBoundary component. This way, if any of the wrapped components throw an error, the error boundary will catch it and display the fallback UI.
+
+import React from 'react';
+import ErrorBoundary from './ErrorBoundary';
+import MyComponent from './MyComponent';
+const App = () => (
+  <ErrorBoundary>
+    <MyComponent />
+  </ErrorBoundary>
+);
+export default App;
+Example with Multiple Error Boundaries
+You can use multiple error boundaries to isolate different parts of your application. This way, an error in one part of the application won't affect other parts.
+import React from 'react';
+import ErrorBoundary from './ErrorBoundary';
+import ComponentA from './ComponentA';
+import ComponentB from './ComponentB';
+
+const App = () => (
+  <div>
+    <ErrorBoundary>
+      <ComponentA />
+    </ErrorBoundary>
+    <ErrorBoundary>
+      <ComponentB />
+    </ErrorBoundary>
+  </div>
+);
+
+export default App;
+
+
+Notes
+	• Error boundaries do not catch errors for:
+		○ Event handlers (you need to use try/catch blocks in event handlers).
+		○ Asynchronous code (e.g., setTimeout or requestAnimationFrame callbacks).
+		○ Server-side rendering.
+		○ Errors thrown in the error boundary itself (rather than its children).
+By implementing error boundaries, you can improve the robustness of your React application and provide a better user experience by displaying a fallback UI when errors occur.
+
+Local Storage
+Local storage allows you to store data in the browser that persists even after the browser is closed and reopened.
+
+localStorage.setItem('key', 'value');
+
+ Session Storage
+Session storage allows you to store data for the duration of the page session. The data is cleared when the page session ends (i.e., when the tab or window is closed).
+
+Routes
+Routes define the mapping between URL paths and the components that should be rendered when those paths are accessed. They are essentially the configuration that tells your application which component to display for a given URL.
+
+• Definition: Routes are defined using the Route component from react-router-dom.
+• Purpose: To map URL paths to specific components.
+• Example
+• Use Routes:
+	○ To define the main structure of your application.
+	○ To map URL paths to specific components.
+	○ To handle nested routes for more complex navigation structures.
+
+ <li><Link to="/">Home</Link></li>
+
+
+Navigation
+Navigation refers to the act of moving from one route to another within your application. It involves changing the URL and rendering the corresponding component as defined by your routes.
+	• Definition: Navigation is performed using components like Link or hooks like useNavigate from react-router-dom.
+	• Purpose: To allow users to move between different parts of the application.
+	• Example:
+
+
+• Use Navigation:
+	○ To allow users to move between pages using links or buttons.
+	○ To programmatically navigate to different routes based on actions or conditions.
+	○ To handle conditional navigation based on user roles, permissions, or other conditions.
+
+  const navigate = useNavigate();
+
+
+
+
+Middleware in Redux
+In Redux, middleware provides a way to extend the capabilities of the Redux store. Middleware can be used to handle asynchronous actions, log actions, perform side effects, and more. Middleware in Redux is applied using the applyMiddleware function from the redux library.
+
+
+useLayoutEffect:
+It's signature is similar to useEffect. But it excute synchnoroulys be will be called before rendering 
+
+
+
+1. How do you optimize the performance of a React Native application?
+	○ Performance can be optimized by using techniques such as:
+		§ Avoiding unnecessary re-renders with React.memo or PureComponent.
+		§ Using FlatList for large lists.
+		§ Optimizing images with Image component properties like resizeMode.
+		§ Using native modules for performance-critical tasks.
+	
+2. What are native modules in React Native?
+	○ Native modules allow you to write native code (Java or Kotlin for Android, Objective-C or Swift for iOS) and expose it to JavaScript. This is useful for accessing platform-specific APIs or improving performance for certain tasks.
+	
+3. How do you handle asynchronous operations in React Native?
+	○ Asynchronous operations can be handled using JavaScript's async/await syntax, Promises, or libraries like redux-thunk or redux-saga for more complex scenarios.
+
+4. What is the difference between controlled and uncontrolled components in React Native?
+	○ Controlled components have their state managed by React, typically through props and state. Uncontrolled components manage their own state internally. Controlled components are preferred for better control and predictability.
+	
+5. How do you debug a React Native application?
+	○ Debugging can be done using tools like React Native Debugger, Flipper, or the built-in Chrome Developer Tools. You can also use console.log statements for simple debugging.
+	
+6. How do you handle forms in React Native?
+	○ Forms can be handled using controlled components with state management. Libraries like Formik and react-hook-form can also be used for more complex form handling.
+	
+7. How React Native Works
+	1. JavaScript Code: You write your application code in JavaScript using React components. These components define the structure and behavior of your UI.
+	2. React Native Components: React Native provides a set of core components (e.g., View, Text, Image, ScrollView, FlatList) that map to native components on iOS and Android. When you use these components in your JavaScript code, React Native translates them into their corresponding native components.
+	3. Bridge: The bridge is a key part of React Native's architecture. It allows communication between the JavaScript thread and the native thread. When you interact with a React Native component, the JavaScript code sends a message to the native code via the bridge. The native code then performs the necessary actions and sends the results back to the JavaScript code.
+	4. Native Modules: React Native allows you to write native code (Java/Kotlin for Android, Objective-C/Swift for iOS) and expose it to JavaScript. This is useful for accessing platform-specific APIs or improving performance for certain tasks. Native modules communicate with JavaScript through the bridge.
+	5. Rendering: React Native uses a virtual DOM similar to React for the web. When the state of a component changes, React Native calculates the difference (diff) between the previous and current state and updates only the necessary components. This improves performance by minimizing the number of updates to the native UI.
+
+
+8. Advantages of React Native
+	• Cross-Platform Development: Write once, run on both iOS and Android.
+	• Hot Reloading: See changes in real-time without recompiling the entire application.
+	• Native Performance: Uses native components for rendering, providing better performance compared to hybrid frameworks.
+	• Large Ecosystem: Access to a wide range of libraries and tools from the React and React Native communities.
+
+9. Threads in React native
+
+In React Native, there are primarily three main threads that handle different aspects of the application. Understanding these threads is crucial for optimizing performance and ensuring smooth user experiences. Here are the three main threads:
+1. JavaScript Thread
+	• Purpose: This thread executes the JavaScript code of your React Native application. It handles the logic, state management, and rendering of React components.
+	• Characteristics:
+		○ Runs the JavaScript code using the JavaScriptCore engine (on iOS) or Hermes engine (on Android, if enabled).
+		○ Handles the React component lifecycle, state updates, and rendering logic.
+		○ Communicates with the native modules and UI thread via the bridge.
+2. UI Thread (Main Thread)
+	• Purpose: This thread is responsible for rendering the user interface and handling user interactions. It is the main thread of the application.
+	• Characteristics:
+		○ Renders native components and updates the UI.
+		○ Handles touch events, gestures, and other user interactions.
+		○ Must remain responsive to ensure smooth animations and interactions.
+3. Native Modules Thread
+	• Purpose: This thread handles the execution of native code, including native modules and background tasks.
+	• Characteristics:
+		○ Executes native code written in Java/Kotlin (for Android) or Objective-C/Swift (for iOS).
+		○ Handles tasks that require native APIs or performance-critical operations.
+		○ Communicates with the JavaScript thread via the bridge.
+Communication Between Threads
+React Native uses a bridge to facilitate communication between the JavaScript thread and the native threads (UI thread and native modules thread). The bridge allows asynchronous communication, ensuring that the JavaScript thread and native threads can operate independently without blocking each other.
+Example Workflow
+	1. JavaScript Thread: Executes the JavaScript code, updates the state, and triggers re-renders.
+	2. Bridge: Sends messages between the JavaScript thread and native threads.
+	3. UI Thread: Renders the updated UI based on the changes from the JavaScript thread.
+	4. Native Modules Thread: Executes native code and performs background tasks as needed.
+Example Code
+Here's an example to illustrate how these threads interact in a React Native application:
+import React, { useState } from 'react';
+import { View, Text, Button, StyleSheet } from 'react-native';
+
+const App = () => {
+  const [count, setCount] = useState(0);
+
+  const handlePress = () => {
+    // JavaScript thread handles the state update
+    setCount(count + 1);
+
+    // Simulate a native module call
+    setTimeout(() => {
+      console.log('Native module call');
+    }, 1000);
+  };
+
+  return (
+    <View style={styles.container}>
+      <Text style={styles.text}>Count: {count}</Text>
+      <Button title="Increment" onPress={handlePress} />
+    </View>
+  );
+};
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  text: {
+    fontSize: 24,
+    marginBottom: 20,
+  },
+});
+
+export default App;
+Summary
+	• JavaScript Thread: Executes the JavaScript code, handles logic, state management, and rendering of React components.
+	• UI Thread (Main Thread): Renders the user interface and handles user interactions.
+	• Native Modules Thread: Executes native code and performs background tasks.
+Understanding these threads and their roles can help you optimize your React Native application for better performance and responsiveness.
+
+
+10. How Push notifications works
+
+Push notifications are messages sent from a server to a client application, typically on a mobile device or web browser. Here's a high-level overview of how push notifications work:
+	1. Client Registration: The client application (e.g., a mobile app or web app) registers with a push notification service (e.g., Apple Push Notification Service (APNs) for iOS, Firebase Cloud Messaging (FCM) for Android and web).
+	2. Token Generation: Upon successful registration, the push notification service generates a unique device token or registration token for the client application.
+	3. Token Storage: The client application sends this token to its backend server, where it is stored and associated with the user or device.
+	4. Notification Creation: When the server wants to send a notification, it creates a message payload and sends it to the push notification service along with the device token.
+	5. Notification Delivery: The push notification service delivers the message to the client application on the user's device.
+	6. Notification Handling: The client application receives the notification and handles it appropriately (e.g., displaying a message to the user, updating the UI).
+
+
+11. How to secure the React Native
+
+Securing a React Native application involves several best practices and techniques to protect your app and its data. Here are some key steps:
+	1. Secure Storage:
+		○ Use secure storage solutions like react-native-keychain or react-native-sensitive-info to store sensitive data such as tokens and passwords.
+	2. Network Security:
+		○ Use HTTPS for all network requests to ensure data is encrypted in transit.
+		○ Validate SSL certificates to prevent man-in-the-middle attacks.
+	3. Authentication and Authorization:
+		○ Implement strong authentication mechanisms, such as OAuth2 or JWT.
+		○ Use libraries like react-native-firebase for secure authentication.
+	4. Code Obfuscation:
+		○ Use tools like ProGuard (for Android) and source maps (for iOS) to obfuscate your code and make it harder for attackers to reverse-engineer.
+	5. Environment Variables:
+		○ Use libraries like react-native-config to manage environment variables securely.
+		○ Avoid hardcoding sensitive information in your codebase.
+	6. Data Encryption:
+		○ Encrypt sensitive data stored on the device using libraries like react-native-encrypted-storage.
+	7. Security Updates:
+		○ Regularly update your dependencies and React Native version to include the latest security patches.
+	8. Static Analysis:
+		○ Use static analysis tools like ESLint and SonarQube to identify and fix security vulnerabilities in your code.
+	9. Permissions:
+		○ Request only the necessary permissions and explain why they are needed to the user.
+		○ Use libraries like react-native-permissions to manage permissions more effectively.
+	10. Secure APIs:
+		○ Ensure your backend APIs are secure by implementing proper authentication, authorization, and input validation.
+Here is an example of how to use react-native-keychain for secure storage:
+import * as Keychain from 'react-native-keychain';
+
+// Function to store a token securely
+export async function storeToken(token) {
+  try {
+    await Keychain.setGenericPassword('token', token);
+    console.log('Token stored successfully');
+  } catch (error) {
+    console.log('Error storing token:', error);
+  }
+}
+
+// Function to retrieve a token securely
+export async function getToken() {
+  try {
+    const credentials = await Keychain.getGenericPassword();
+    if (credentials) {
+      console.log('Token retrieved successfully');
+      return credentials.password;
+    } else {
+      console.log('No token stored');
+      return null;
+    }
+  } catch (error) {
+    console.log('Error retrieving token:', error);
+    return null;
+  }
+}
+
+// Function to delete a token securely
+export async function deleteToken() {
+  try {
+    await Keychain.resetGenericPassword();
+    console.log('Token deleted successfully');
+  } catch (error) {
+    console.log('Error deleting token:', error);
+  }
+}
+This example demonstrates how to securely store, retrieve, and delete a token using react-native-keychain.
+
+
+12. How to create native modules
+
+How to generate andoid and ios build in react native
+
+
+To generate Android and iOS builds in React Native, follow these steps:
+Android Build
+	1. Open Terminal and navigate to your React Native project directory.
+	2. Generate the APK:
+cd android
+./gradlew assembleRelease
+The APK will be located at android/app/build/outputs/apk/release/app-release.apk.
+iOS Build
+	1. Install CocoaPods (if not already installed):
+sudo gem install cocoapods
+	2. Navigate to the iOS directory:
+cd ios
+pod install
+	3. Open the project in Xcode:
+open YourProjectName.xcworkspace
+	4. Select a target device (e.g., a connected iPhone or a simulator).
+	5. Build the project:
+		○ Select Product from the top menu.
+		○ Choose Archive to create a build.
+The build will be available in the Xcode Organizer, where you can export it for distribution.
+Additional Notes
+	• Ensure you have the necessary environment setup for both Android and iOS development.
+	• For Android, you need Android Studio and the Android SDK.
+	• For iOS, you need Xcode and a valid Apple Developer account for distribution.
+These steps will help you generate builds for both Android and iOS in a React Native project.
+
+
+
+With help of refs we can access the elements / DOM Nodes directly
+
+useRef is a hook that allows you to create a reference to the dom element or a value that persists accsross with out causing re-render
+
+forwardRef is used to pass a ref through a componenet to one of it's child compoenet. It allows parent componenets to directly access a child's DOM Node 
+
+
+Shadow DOM
+
+Diff b/w navigation.navigate and push
+Recat life cycles 
+Middleware
+Reducers 
+
+
+Mounting:
+ 
+constructor-> getDerivedstateFromProps(props,state), --> render --> componentDidMount
+
+Updating:
+
+getDerivedStateFromProps(props,state) --> shouldComponentUpdate(nextProps,nextState)--> render --> getSnapshotBeforeUpdate(prevProps,PrevState). -->compoennetDidUpadte(prevProps,prevState) 
+
+unMounting:
+componentWillUnMount
+
+errorBoundary:
+componentDidCatch
+
+
+Navigation. Relpace --> does't contain back button
+Navigation.popToTop ---> directly goes to the top of the stack
+Navigation.push --> navigation.push can be used to navigate to another screen while adding the new screen to the navigation stack. This is useful when you want to navigate to the same screen multiple times with different parameters or when you want to maintain the navigation history.
+Navigation.pop(number) --> removes the number of screens 
+
+
+	1. What is React Native
+	2. How many threads are in react-native
+	3. How react-native works
+	4. What is virtual Dom and what is the algorithm of virtual Dom
+	5. Difference b/w class component, functional component and pure component
+	6. What is state and props
+	7. Component life cycle in react native
+	8. React Hooks
+	9. Can we update state directly to assign the variable/state?
+	10. Can we update the state in render method directly?
+	11. Can we update state in componentDidUpdate Method
+	12. How we can avoid unnecessary re rendering in react-native
+	13. In which component life cycle method you use API calls and why?
+	14. What is higher order component and it’s advantages
+	15. What is fragment
+	16. Complete redux flow —> action, reducer and store
+	17. Why we should use middleware and what types of middlewares are available.?
+	18. What is promises and why we should use promises
+	19. What is use memo
+	20. What is contextAPI and what is the use
+	21. Did you use Native modules in your application
+	22. What http request you used (like axios, fetch)
+	23. What is async/await
+	24. Controlled and uncontrolled component (like ref)
+	25. Types of navigation in react native
+	26. What is push, pop, stack in react navigation
+	27. Unit testing frameworks used in react-native
+	28. How to generate react native builds and publish
+	29. TouchableNative feedback
+	30. Herms
+	31. JSI
+	32. Error status codes
+	
+
+React native code
+
+
+JavaScript:
+	1. In how many ways we can create object in javascript
+	2. Functional constructor and class 
+	3. Inheritance in Javascript —> Prototypal and classical
+	4. What is prototype and proptype
+	5. What is hoisting
+	6. What is clouser
+	7. Difference b/w shallow copy and deep copy and what are the ways to implement
+	8. ES6 properties ( spread operator, rest operator, destructuring, default parameter etc…)
+	9. Difference b/w arrow function and regular function
+	10. Data types in javascript
+	11. Difference b/w == and === 
+	12. What is useStrict
+	13. What is “this” ?
+	14. Array methods usage —> (map, filter, find, etc…)
+	15. What is undefined and null
+	16. Type of null
+	17. What is var, let and const and what is the use
+	18. Generator functions
+	19. Java script is single thread and multi thread and why?
+	20. Call, apply and bind and where we will use
+	21. Example code on setTimeOut and undefined variable in function
+	22. Difference b/w splice and slice
+	23. Anonymous function
+	24. Immediate invoke function
+	25. Diff b/w toBe and toEqual
+	26. Prototype inheritance
+1. promises in javascript
+
+2. Generator functions
+3. Java script is single thread and multi thread and why?
+4. Call, apply and bind and where we will use
+5. Example code on setTimeOut and undefined variable in function
+

@@ -1,0 +1,169 @@
+Design Patterns
+Solid Principles
+Archetucture
+DSA
+
+setTimeout 
+SetTimeinterval
+Type of react navigations
+Security in react
+Pure component
+
+
+
+Solid Principle:
+
+1.Single responsibility principle
+
+A function should do one task. Should not do multiple tasks. Should not more actions or tasks in single function.
+
+1. Single Responsibility Principle (SRP)
+Definition: A class should have only one reason to change, meaning it should have only one job or responsibility.
+Explanation: Each class should focus on a single task or responsibility. This makes the class easier to understand, maintain, and test.
+class User {
+  constructor(public name: string, public email: string) {}
+}
+class UserRepository {
+  save(user: User) {
+    // Save user to the database
+  }
+}
+class UserService {
+  constructor(private userRepository: UserRepository) {}
+  registerUser(name: string, email: string) {
+    const user = new User(name, email);
+    this.userRepository.save(user);
+  }
+}
+
+
+
+Open / Closed:
+
+Open for extension but closed to modification
+
+We can change the behavior by adding the new code instead of modifying the old code and breaking the existing changes.
+2. Open/Closed Principle (OCP)
+Definition: Software entities (classes, modules, functions, etc.) should be open for extension but closed for modification.
+Explanation: You should be able to add new functionality to a class without changing its existing code. This can be achieved through inheritance or composition.
+
+interface Shape {
+  area(): number;
+}
+class Rectangle implements Shape {
+  constructor(private width: number, private height: number) {}
+  area(): number {
+    return this.width * this.height;
+  }
+}
+class Circle implements Shape {
+  constructor(private radius: number) {}
+  area(): number {
+    return Math.PI * this.radius * this.radius;
+  }
+}
+class AreaCalculator {
+  calculate(shapes: Shape[]): number {
+    return shapes.reduce((total, shape) => total + shape.area(), 0);
+  }
+}
+
+
+
+Liskov Substitution Principle: 
+
+Classes should have been implemented with reasonable and relatable methods
+
+3. Liskov Substitution Principle (LSP)
+Definition: Subtypes must be substitutable for their base types without altering the correctness of the program.
+Explanation: Objects of a superclass should be replaceable with objects of a subclass without affecting the functionality of the program.
+
+
+class Bird {
+  fly() {
+    console.log("Flying");
+  }
+}
+class Sparrow extends Bird {}
+class Ostrich extends Bird {
+  fly() {
+    throw new Error("Ostriches can't fly");
+  }
+}
+function makeBirdFly(bird: Bird) {
+  bird.fly();
+}
+const sparrow = new Sparrow();
+makeBirdFly(sparrow); // Works fine
+const ostrich = new Ostrich();
+makeBirdFly(ostrich); // Throws an error
+
+
+
+Interface segregation priciple
+
+4. Interface Segregation Principle (ISP)
+Definition: Clients should not be forced to depend on interfaces they do not use.
+Explanation: Create specific interfaces for different clients instead of a single general-purpose interface.
+
+interface Printer {
+  print(): void;
+}
+interface Scanner {
+  scan(): void;
+}
+class AllInOnePrinter implements Printer, Scanner {
+  print() {
+    console.log("Printing");
+  }
+  scan() {
+    console.log("Scanning");
+  }
+}
+class SimplePrinter implements Printer {
+  print() {
+    console.log("Printing");
+  }
+}
+
+
+5. Dependency Inversion Principle (DIP)
+Definition: High-level modules should not depend on low-level modules. Both should depend on abstractions. Abstractions should not depend on details. Details should depend on abstractions.
+Explanation: Depend on abstractions (interfaces) rather than concrete implementations.
+
+
+interface Database {
+  save(data: string): void;
+}
+class MySQLDatabase implements Database {
+  save(data: string) {
+    console.log(`Saving ${data} to MySQL database`);
+  }
+}
+class MongoDBDatabase implements Database {
+  save(data: string) {
+    console.log(`Saving ${data} to MongoDB database`);
+  }
+}
+class UserService {
+  constructor(private database: Database) {}
+  saveUser(data: string) {
+    this.database.save(data);
+  }
+}
+const mySQLDatabase = new MySQLDatabase();
+const userService = new UserService(mySQLDatabase);
+userService.saveUser("User data");
+const mongoDBDatabase = new MongoDBDatabase();
+const userServiceWithMongo = new UserService(mongoDBDatabase);
+userServiceWithMongo.saveUser("User data");
+
+
+
+• Single Responsibility Principle (SRP): A class should have only one reason to change.
+• Open/Closed Principle (OCP): Software entities should be open for extension but closed for modification.
+• Liskov Substitution Principle (LSP): Subtypes must be substitutable for their base types.
+• Interface Segregation Principle (ISP): Clients should not be forced to depend on interfaces they do not use.
+• Dependency Inversion Principle (DIP): Depend on abstractions rather than concrete implementations
+
+

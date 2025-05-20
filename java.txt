@@ -1,0 +1,250 @@
+
+
+
+
+	1. What is JDK
+	2. What is JVM
+	3. What is JRE
+	4. Primitive data types
+	5. Methods
+	6. If-else / switch
+	7. Loops
+	8. Class
+	9. Create Object
+	10. Static variables / static Methods
+	11. Method overloading
+	12. Constructor / parameterized constructor
+	13. Super();
+	14. This();
+	15. Anonymous Object
+	16. OOPS
+	17. Inheritance
+	18. Method overRiding
+	19. Packages
+	20. Abstratction
+	21. Access modifiers
+	22. Interface
+	23. Exception handlings
+	24. Lambda expressions
+	25. Input / output readers
+	26. Threads
+
+
+
+
+ java complies on JDK and runs ion JRE
+
+Javac  fileName ---> compilation
+Java className--> run
+
+
+Java code ---> compiler Converts---> byte code  ---> Runs on JVM
+Integer --> byte, short, int, long
+Floating --> double, float.
+Char--> boolean
+
+Jagged array  ---> infinte array
+
+Int[] n1= new int[5] --->creating array
+
+Int a[]={1,2,3}
+
+Student[] s= new Student[5] 
+
+for(int i: students){
+Print(i)
+}
+
+StringBuffer sb= new StringBuffer("santosh")
+
+
+Static --> it refers common for all object. So we. Can call directly with class name
+It's belong to the class not object.
+
+
+Method name and class is same it's called as constructor.
+
+Static{
+Name='santosh'
+}
+
+Initializing the static block
+
+First class loads then object get initation
+
+Class.forName("class name") --> to load static variable with out creating any object
+
+Non-static variable can't access in static method but static variable access in non-static method
+
+
+Overloading:
+Same method name with different parameters
+	1. Constructor Overloading:  Default Constructor, Parameter Constructor
+	2. Method Overloading
+
+
+Every constructor by default have super(). So first its calls parent constructor after that calls the actual class
+
+Every class extends by default Object class
+
+this(). :  calls the constructor of the same class
+Super(): calls the constructor of the super class
+Super.methodName(): calls the parent class method
+
+Class , interface---> starts with Capital
+Variables, method. --> camelCase
+Constants. --> Upper case
+
+Snake Case : uses  _
+
+
+If an object doesn't have any reference it's called as anonymous object. It can be used only once.
+
+new A();
+
+
+Inheritance consists of IS - A Relationship
+
+By default each and every file java.lang.* is imported. * represents all the files and not folders
+
+Access Modifier:
+	1. Default: we can access with in same package but not outside of package.
+	2. Public: can access any where
+	3. Private: Can access with in same class
+	4. Protected: Access with in same class, package and child class
+
+Polymorphism:
+
+	1. Compile time Polymorphism: Method Overloading
+	2. Run Time Polymorphism: Method Over Riding
+
+Dynamic method dispatch: child object with Parent instance
+
+A obj= new B();  --> should have inheritance
+
+Final --> can use with variable, method, class
+
+If we make class has final, can't be inherited
+If make method has final, can't be override 
+
+Wrapper class:
+	1. Integer
+	2. Double
+	3. String
+	
+	
+	Taking primitive value storing it in wrapper object called boxing
+	
+	
+Integer.parseInt("string")--> which converts string into integer
+
+Abstract. ---> existing only idea not a physical thing
+
+Abstract class can't be initiated. It has only declarations but not definitions. It can only be inherited.
+Abstract class contains abstract and non-abstract methods.
+
+
+By default interfaces are public abstract.
+In Interface variables are by default final and static
+
+Interface can be inherited
+
+Class - class --> extends
+Class - interface ---> implements
+Interface - interface ---> extends
+
+annotations
+
+Lambda expressions works with functional interfaces which means this interface consists only one function declaration
+
+
+	1. UnChecked exception
+	2. Checked Exception
+
+ArithmeticException
+ArrayIndexOutofBoundException
+NullPointerException
+
+
+
+Throw
+Throws. --> Throws ClassNotFoundException
+
+Java.io
+
+Reading the inputs:
+
+Int num= System.in.read()
+
+InputStreamReader in= new InputStreamReader(System.in);
+
+BufferedReader bf= new BufferedReader(bf)
+
+Int num = Integer.parseInt(bf.readLine())
+
+sysetm.out.println(num)
+
+Bf.close()
+
+Scanner sc= new Scanner();
+Int num= sc.nextInt()
+
+
+Threads:
+
+Obj.start()
+Obj.run();
+Obj.getPriority()
+Thread.setPriority()
+Thread.sleep("time")
+
+
+Class implements with Runnable interface
+
+
+Class must contain run method.
+
+If same method / variable shared b/w multiple thread then we should use synchronized keyword to that method / variable. --> it's called race condition 
+
+Thread  state
+	1. New state --> start()
+	2. Runnable -->run()
+	3. Running -->sleep() / wait()
+	4. Waiting -->  notify() ---> Runnable
+	5. Dead -->
+
+Stack: last in first out
+Que: First in first out
+
+
+Collections:
+
+	1. List
+		a. ArrayList
+		b. LinkedList
+	2. Queue
+		a. DeQueue
+	3. Set
+		a. HashSet --->  gives in random order and remove the duplicated element
+		b. LinkedHashSet
+		c. TreeSet ---> gives in sorted order and remove the duplicated element
+	4. Map
+		a. HashMap
+		b. HashTable
+
+Map is collection of key value pair
+
+
+HashSet removes the duplicated elements and which doesn't return the same order and doesn't give index
+	
+	
+	
+	List <Integer> num = new ArrayList<>()
+	
+	num.add(1)
+	num.add(2)
+	
+	for(i=0;i<num.size(); i++){
+	System.out.println(num.get(i))
+	} 
+

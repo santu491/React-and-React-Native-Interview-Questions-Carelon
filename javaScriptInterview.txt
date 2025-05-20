@@ -1,0 +1,669 @@
+	1. What is JavaScript?
+		○ JavaScript is a high-level, interpreted programming language that is used to create dynamic and interactive web content.
+	2. What are the data types in JavaScript?
+		○ The data types in JavaScript are: Number, String, Boolean, Object, Undefined, Null, Symbol, and BigInt.
+	3. What is the difference between let, const, and var?
+		○ var is function-scoped, while let and const are block-scoped. const is used to declare variables that cannot be reassigned.
+	4. Explain the concept of closures in JavaScript.
+		○ A closure is a function that retains access to its lexical scope, even when the function is executed outside that scope.
+		○ Function along with it's lexical scope bundle together forms a clouser
+	5. What is the difference between == and ===?
+		○ == checks for equality with type coercion, while === checks for equality without type coercion (strict equality).
+	6. What are arrow functions, and how do they differ from regular functions?
+		○ Arrow functions are a shorthand for writing functions. They do not have their own this, arguments, super, or new.target bindings.
+		○ Arrow function Can't be used inside an object. Normal function can be used inside the obeject
+	7. What is event delegation?
+		○ Event delegation is a technique of using a single event listener to manage all events of a particular type for child elements, by taking advantage of event bubbling.
+	8. Explain the concept of promises and how they are used.
+		○ Promises represent the eventual completion (or failure) of an asynchronous operation and its resulting value. They are used to handle asynchronous operations in a more manageable way.
+	9. What is the purpose of the async and await keywords?
+		○ async is used to declare an asynchronous function, and await is used to pause the execution of the function until the promise is resolved.
+	10. What is the difference between null and undefined?
+		○ null is an assignment value that represents no value, while undefined means a variable has been declared but not yet assigned a value.
+		○ Type of undefined is undefined. Type of Null is null
+		○ Undefined - Variable is declared but not assigned any value
+		
+	11. How does prototypal inheritance work in JavaScript?
+		○ Objects can inherit properties and methods from other objects via the prototype chain. Each object has a prototype, and it can access properties and methods defined on its prototype.
+	12. What are JavaScript modules, and how do you use them?
+		○ JavaScript modules allow you to break up your code into separate files. You can export functions, objects, or primitives from one module and import them into another.
+	13. What is the difference between call(), apply(), and bind()?
+		○ call() and apply() invoke a function with a specified this context. call() takes arguments separately, while apply() takes arguments as an array. bind() returns a new function with a specified this context and arguments.
+	14. What is hoisting in JavaScript?
+		○ Hoisting is JavaScript's default behavior of moving declarations to the top of the current scope. Only declarations are hoisted, not initializations.
+	15. What is the event loop in JavaScript?
+		○ The event loop is a mechanism that allows JavaScript to perform non-blocking operations by offloading operations to the system kernel whenever possible.
+	16. What is the difference between synchronous and asynchronous code?
+		○ Synchronous code is executed sequentially, blocking the execution of subsequent code until the current operation completes. Asynchronous code allows other operations to continue before the current operation completes.
+	17. What is a callback function?
+		○ A callback function is a function passed into another function as an argument, which is then invoked inside the outer function to complete some kind of routine or action.
+	18. What is the difference between map(), filter(), and reduce()?
+		○ map() creates a new array with the results of calling a provided function on every element. filter() creates a new array with all elements that pass the test implemented by the provided function. reduce() executes a reducer function on each element of the array, resulting in a single output value.
+	19. What is the this keyword in JavaScript?
+		○ The this keyword refers to the object it belongs to. Its value depends on how the function is called.
+	20. What is the difference between forEach() and map()?
+		○ forEach() executes a provided function once for each array element and does not return a new array. map() executes a provided function once for each array element and returns a new array with the results.
+	21. What is the difference between slice() and splice()?
+		○ slice() returns a shallow copy of a portion of an array into a new array without modifying the original array. splice() changes the contents of an array by removing or replacing existing elements and/or adding new elements in place.
+		○ Arr.slice(start,end) --> start index is included, end index is excluded
+		○ Array.splice(start index, count, item1,item2)
+	22. What is the difference between Object.freeze() and Object.seal()?
+		○ Object.freeze() makes an object immutable, preventing any changes to its properties. Object.seal() prevents new properties from being added to an object but allows modification of existing properties.
+	23. What is the difference between == and ===?
+		○ == checks for equality with type coercion, while === checks for equality without type coercion (strict equality).
+	24. What is the difference between null and undefined?
+		○ null is an assignment value that represents no value, while undefined means a variable has been declared but not yet assigned a value.
+		
+	25. Shallow Copy vs Deep Copy:?
+Differences:
+	• Shallow Copy: Copies only the first level of the object, nested objects are still referenced.
+	• Deep Copy: Copies all levels of the object, creating new instances of nested objects.
+Methods to Create Copies:
+	• Shallow Copy: Object.assign(), spread operator ({...obj})
+	• Deep Copy: JSON.parse(JSON.stringify(obj)), libraries like Lodash (_.cloneDeep())
+
+	26. Javascript methods
+
+JavaScript methods are functions that are defined inside an object. Here are some common JavaScript methods:
+	1. String Methods:
+		○ charAt()
+		○ concat()
+		○ includes()
+		○ indexOf()
+		○ replace()
+		○ slice()
+		○ split()
+		○ toLowerCase()
+		○ toUpperCase()
+		○ trim()
+	2. Array Methods:
+		○ concat()
+		○ every()
+		○ filter()
+		○ find()
+		○ forEach()
+		○ includes()
+		○ indexOf()
+		○ map()
+		○ pop()
+		○ push()
+		○ reduce()
+		○ shift()
+		○ slice()
+		○ sort()
+		○ splice()
+		○ unshift()
+	3. Object Methods:
+		○ assign()
+		○ entries()
+		○ freeze()
+		○ keys()
+		○ values()
+	4. Math Methods:
+		○ abs()
+		○ ceil()
+		○ floor()
+		○ max()
+		○ min()
+		○ random()
+		○ round()
+		○ sqrt()
+	5. Date Methods:
+		○ getDate()
+		○ getDay()
+		○ getFullYear()
+		○ getHours()
+		○ getMilliseconds()
+		○ getMinutes()
+		○ getMonth()
+		○ getSeconds()
+		○ getTime()
+		○ setDate()
+		○ setFullYear()
+		○ setHours()
+		○ setMilliseconds()
+		○ setMinutes()
+		○ setMonth()
+		○ setSeconds()
+		○ setTime()
+Would you like examples of any specific methods?
+
+
+Here are some commonly used JavaScript array methods:
+	1. push(): Adds one or more elements to the end of an array and returns the new length of the array.
+let arr = [1, 2, 3];
+arr.push(4); // arr is now [1, 2, 3, 4]
+	
+	2. pop(): Removes the last element from an array and returns that element.
+let arr = [1, 2, 3];
+let lastElement = arr.pop(); // lastElement is 3, arr is now [1, 2]
+	3. shift(): Removes the first element from an array and returns that element.
+let arr = [1, 2, 3];
+let firstElement = arr.shift(); // firstElement is 1, arr is now [2, 3]
+	4. unshift(): Adds one or more elements to the beginning of an array and returns the new length of the array.
+let arr = [1, 2, 3];
+arr.unshift(0); // arr is now [0, 1, 2, 3]
+	5. map(): Creates a new array with the results of calling a provided function on every element in the calling array.
+let arr = [1, 2, 3];
+let doubled = arr.map(x => x * 2); // doubled is [2, 4, 6]
+	6. filter(): Creates a new array with all elements that pass the test implemented by the provided function.
+let arr = [1, 2, 3, 4];
+let even = arr.filter(x => x % 2 === 0); // even is [2, 4]
+	7. reduce(): Executes a reducer function on each element of the array, resulting in a single output value.
+let arr = [1, 2, 3, 4];
+let sum = arr.reduce((acc, x) => acc + x, 0); // sum is 10
+	8. forEach(): Executes a provided function once for each array element.
+let arr = [1, 2, 3];
+arr.forEach(x => console.log(x)); // logs 1, 2, 3
+	9. find(): Returns the value of the first element in the array that satisfies the provided testing function.
+let arr = [1, 2, 3, 4];
+let found = arr.find(x => x > 2); // found is 3
+	10. findIndex(): Returns the index of the first element in the array that satisfies the provided testing function.
+let arr = [1, 2, 3, 4];
+let index = arr.findIndex(x => x > 2); // index is 2
+	11. includes(): Determines whether an array includes a certain value among its entries, returning true or false.
+let arr = [1, 2, 3];
+let hasTwo = arr.includes(2); // hasTwo is true
+	12. slice(): Returns a shallow copy of a portion of an array into a new array object.
+let arr = [1, 2, 3, 4];
+let part = arr.slice(1, 3); // part is [2, 3]
+	13. splice(): Changes the contents of an array by removing or replacing existing elements and/or adding new elements in place.
+let arr = [1, 2, 3, 4];
+arr.splice(1, 2, 5, 6); // arr is now [1, 5, 6, 4]
+	14. concat(): Merges two or more arrays.
+let arr1 = [1, 2];
+let arr2 = [3, 4];
+let merged = arr1.concat(arr2); // merged is [1, 2, 3, 4]
+	15. join(): Joins all elements of an array into a string.
+let arr = [1, 2, 3];
+let str = arr.join('-'); // str is "1-2-3"
+These methods can help you manipulate arrays effectively in JavaScript.
+
+
+
+OOPS in javascript
+
+
+Var is global and function scope
+Let is block scope
+
+
+Anonymous function:
+
+Function without name is called anonymous function
+
+
+Filter: taking array elements as an input and finding out an array which has only the values which are filtered based on some logic
+
+
+This --> outside refers to global object, in browser refers to window --> in non- strict mode
+In strict mode --> in side method this is undefined. And the value of this is how the function is called
+
+Function x(){
+Console.log(this)
+}
+
+X() ---> undefined.
+Window.x() --> window
+
+
+
+
+Method. -> if a function is part of object then it's called method.
+
+Armstrong number
+
+useimprativehandle
+
+
+Closure:
+
+A closure is a feature in JavaScript where an inner function has access to the outer (enclosing) function's variables. This includes:
+
+
+function outerFunction() {
+  let outerVariable = 'I am from outer function';
+  function innerFunction() {
+    console.log(outerVariable); // Accessing outer function's variable
+  }
+  return innerFunction;
+}
+const closureFunction = outerFunction();
+closureFunction(); // Output: "I am from outer function"
+
+Example 2:
+
+function createCounter() {
+  let count = 0;
+  return {
+    increment: function() {
+      count++;
+      return count;
+    },
+    decrement: function() {
+      count--;
+      return count;
+    },
+    getCount: function() {
+      return count;
+    }
+  };
+}
+const counter = createCounter();
+console.log(counter.increment()); // Output: 1
+console.log(counter.increment()); // Output: 2
+console.log(counter.decrement()); // Output: 1
+console.log(counter.getCount());  // Output: 1
+
+
+Type of undefined --> undefined
+Type of null --> object
+
+Symbol: Represents a unique and immutable value, often used as object property keys.
+
+Arrow function Vs Normal function:
+
+• Syntax: Arrow functions have a shorter syntax.
+• this Binding: Arrow functions inherit this from the enclosing context, while normal functions have their own this.
+• Arguments Object: Arrow functions do not have their own arguments object.
+• Usage as Methods: Arrow functions are not suitable for use as methods in objects.
+• Constructor: Arrow functions cannot be used as constructors.
+
+ES6 features:
+
+ECMAScript 6 (ES6), also known as ECMAScript 2015, introduced several new features and improvements to JavaScript. Here are some of the key features:
+1. Arrow Functions
+A shorter syntax for writing functions and lexically binds the this value.
+const add = (a, b) => a + b;
+2. let and const
+Block-scoped variable declarations.
+let x = 10;
+const y = 20;
+3. Template Literals
+String literals allowing embedded expressions.
+const name = 'John';
+const greeting = `Hello, ${name}!`;
+4. Default Parameters
+Default values for function parameters.
+function greet(name = 'Guest') {
+  return `Hello, ${name}!`;
+}
+5. Destructuring Assignment
+A syntax for extracting values from arrays or properties from objects.
+const [a, b] = [1, 2];
+const { name, age } = { name: 'John', age: 30 };
+6. Rest and Spread Operators
+Rest operator for function parameters and spread operator for arrays and objects.
+function sum(...numbers) {
+  return numbers.reduce((acc, num) => acc + num, 0);
+}
+
+const arr = [1, 2, 3];
+const newArr = [...arr, 4, 5];
+7. Classes
+A new syntax for creating objects and dealing with inheritance.
+class Person {
+  constructor(name) {
+    this.name = name;
+  }
+
+  greet() {
+    return `Hello, ${this.name}!`;
+  }
+}
+
+class Student extends Person {
+  constructor(name, grade) {
+    super(name);
+    this.grade = grade;
+  }
+
+  study() {
+    return `${this.name} is studying.`;
+  }
+}
+8. Modules
+A way to organize and reuse code using import and export.
+// module.js
+export const pi = 3.14;
+export function add(a, b) {
+  return a + b;
+}
+
+// main.js
+import { pi, add } from './module';
+console.log(add(pi, 2));
+9. Promises
+A new way to handle asynchronous operations.
+const promise = new Promise((resolve, reject) => {
+  setTimeout(() => resolve('Success!'), 1000);
+});
+
+promise.then(result => console.log(result));
+10. Enhanced Object Literals
+Shorthand for defining properties and methods in objects.
+const name = 'John';
+const person = {
+  name,
+  greet() {
+    return `Hello, ${this.name}!`;
+  }
+};
+11. Iterators and Generators
+New protocols for defining custom iteration behavior.
+function* generator() {
+  yield 1;
+  yield 2;
+  yield 3;
+}
+
+const gen = generator();
+console.log(gen.next().value); // 1
+console.log(gen.next().value); // 2
+console.log(gen.next().value); // 3
+12. Map and Set
+New collection types for storing unique values and key-value pairs.
+const set = new Set([1, 2, 3, 3]);
+console.log(set); // Set { 1, 2, 3 }
+
+const map = new Map();
+map.set('key', 'value');
+console.log(map.get('key')); // 'value'
+13. Symbol
+A new primitive data type for creating unique identifiers.
+const sym = Symbol('description');
+console.log(typeof sym); // 'symbol'
+14. Block-Scoped Functions
+Functions can be declared within blocks and are scoped to that block.
+{
+  function foo() {
+    return 'bar';
+  }
+  console.log(foo()); // 'bar'
+}
+console.log(typeof foo); // 'undefined'
+These features make JavaScript more powerful and expressive, improving code readability and maintainability.
+
+
+
+• call and apply invoke a function with a specified this context and arguments. call accepts arguments individually, while apply accepts arguments as an array. bind returns a new function with a specified this context and arguments.
+function greet(greeting, punctuation) {
+  console.log(`${greeting}, ${this.name}${punctuation}`);
+}
+
+const person = { name: 'John' };
+
+greet.call(person, 'Hello', '!'); // Output: "Hello, John!"
+greet.apply(person, ['Hi', '.']); // Output: "Hi, John."
+const boundGreet = greet.bind(person, 'Hey');
+boundGreet('?'); // Output: "Hey, John?"
+
+
+
+• shallow Copy: Only the top-level properties are copied. Nested objects are shared between the original and the copy.
+	○ Methods: Object.assign(), spread operator { ...obj }
+• Deep Copy: All levels of the object are copied. Nested objects are duplicated.
+	○ Methods: JSON.parse(JSON.stringify(obj)) (for simple objects), _.cloneDeep() (using Lodash for complex objects
+
+
+
+
+	1. longestSubstring("abcabcbcb") find the largest substring using javascript inbuild method
+	2. Return even or odd using promise both async/await and then/catch
+	3. Implement clouser functionality
+	4. UI - implement 3 buttons with inc/dec/reset using customhook
+
+
+
+const logger=(s)=>{
+ var count=0;
+  const logMessage=()=>{
+   console.log(s)
+  }
+  
+  const getCount=()=>{
+        count++;
+    console.log(count)
+    return count;
+  }
+  return {logMessage,getCount}
+}
+
+const data= logger("hello")
+data.logMessage();
+data.getCount();
+data.logMessage();
+data.getCount();
+data.logMessage();
+data.getCount();
+
+
+
+const evenCheck=(n)=>{
+  return new Promise((resolve,reject)=>{
+    if(n%2===0){
+      resolve("even")
+    }
+    else{
+      reject("odd")
+    }
+  })
+}
+
+// evenCheck(4).then((res)=>{
+//   console.log("even...",res)
+// }).catch((err)=>{
+//   console.log("odd....",err)
+// })
+
+// evenCheck(3).then((res)=>{
+//   console.log("even...",res)
+// }).catch((err)=>{
+//   console.log("odd....",err)
+// })
+
+const check=async(num)=>{
+  try{
+    data=await evenCheck(num)
+    console.log("success....",data)
+  }
+  catch(error){
+    console.log("error...",error)
+  }
+}
+
+check(3);
+check(4)
+
+
+
+
+
+
+
+
+6528 5000 3929 5067
+
+
+34757. ---> 36056
+
+35290 --> 36598
+
+3862 ---> 3922 
+4007 --> 4066
+
+
+
+
+34757
+
+
+
+37190-38900
+
+
+
+
+Prototypal inheritance
+
+var a = 5; (function() { console.log(a); var a = 10; })();
+ 
+for (var i=0; i<5; i++) { setTimeout(()=>{console.log(i)}, i*1000); }
+
+[1,2,3].customInclude(5) => false
+[1,2,3].customInclude(2) => true
+
+
+
+
+
+const reverseString = (arr, index) => {
+  const data = arr.split('').filter((item, itemIndex) => itemIndex !== (index - 1));
+  const revString = []
+  for (let i = data.length - 1; i >= 0; i--) {
+    revString.push(data[i])
+  }
+  
+  return arr[index - 1] + revString.join('')
+}
+const input = "abcdefgh";
+const k = 3;
+const value = reverseString(input, k)
+console.log(value)
+
+
+
+
+Write a function that takes a string as input and returns the first non-repeated
+character in the string. If there are no non-repeated characters, return null.
+"abacddce" → “b” "acacddcb" → “b” "abbbb" → a "abcdef" → a “abab” → null
+
+Debouncing technique
+
+Prototypal inheritance
+ throttle
+polyfills
+
+Ref
+Forward ref
+
+
+1119. ---> 8th jan ---
+1214 --> 6th jan ----
+1439 -->  8th jan
+1139 --> 8th jan
+
+
+
+it's been great working with you! Your dedication and teamwork have truly made a difference. your insights and positive attitude always make the work enjoyable. Your support and guidance have a significant impact on me.
+
+
+
+CREATE the function in the javamodule. That class modules needs to be added to pacakage 
+
+Jailborken
+Sslpinning
+Codepush
+Lazyloading
+Build falvours
+Nativemodules
+Husky - eslint set up
+How to setup push notification in firebase messaging
+What is the bundling
+How to generate build in android and ios
+Accessbility testing
+deeplinking
+Theming
+How to setup 
+Designpatterns
+Bamboo configutarion
+What kind of design patterns 
+Debugging tools - herms engine
+Memory leakage
+Performanec optimization
+Unit testing
+Fetch crud operations
+Alternative for redux
+statemachine
+useLayouteffect
+Intrfae type
+Design patterns
+How to improve performance
+How to reduce the bundle size
+Code review check list
+
+const students=
+[{rNo:1,name:"Emily",grades:"A",height:112},
+{rNo:2,name:"Jhonson",grades:"B",height:109},
+{rNo:3,name:"Smith",grades:"B-",height:121},
+{rNo:4,name:"Michael",grades:"C",height:115},
+{rNo:5,name:"Williams",grades:"A+",height:119},
+{rNo:6,name:"Sophia",grades:"C+",height:111},
+{rNo:7,name:"James",grades:"B+",height:114},
+{rNo:8,name:"Ava",grades:"C-",height:118},
+{rNo:9,name:"Olivia",grades:"A-",height:110}]
+
+const desc=(data)=>{
+    const gardesArray=["A+","A","A-","B+","B","B-","C+","C","C-"]
+//   data.sort((a,b)=>{
+//     const a1=a.grades.toLowerCase();
+//     const b1=b.grades.toLowerCase();
+//     if(a1>b1){
+//         return 1
+//     }
+//     else if(a1<b1){
+//         return -1
+//     }
+//     return 0
+//   })
+   data.sort((a,b)=>gardesArray.indexOf(a.grades)-gardesArray.indexOf(b.grades))
+   return data
+}
+
+const value=desc(students)
+
+Interface enum type uses
+
+
+
+Dazn:
+
+
+const factroial = (num) => {
+  if (num === 0 || num === 1) return 1;
+  let val = 1;
+  for (i = 1; i <= num; i++) {
+    val *= i;
+  }
+  return val;
+};
+const fact = factroial(5);
+console.log(fact)
+/*---Recur----*/
+const factRecu = (num) => {
+  if (num === 0 || num === 1) return 1;
+  return num * factRecu(num - 1)
+}
+const factre = factRecu(5);
+console.log(factre)
+
+
+https://leetcode.com/problems/can-make-palindrome-from-substring/solutions/
+
+
+TCS
+Optum
+Lloyds
+Arrise Solutions
+Publicis Sapient
+BBY
+DAZN
+Ascendion
+Blue Yonder
+PRUDENT Globaltech sloutions
+Algoleap
+
+
+
+
+

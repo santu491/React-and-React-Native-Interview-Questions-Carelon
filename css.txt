@@ -1,0 +1,287 @@
+Html tag: CSS selector
+
+	1. Inline css  --- with in html open tag
+	2. Internal css  --- with in head tag
+	3. Extrernal css --- in separate document
+
+
+Priority of css:
+	1. Inline
+	2. Internal
+	3. Extrenal
+	
+	
+!important gives first priority
+
+------------------------------------
+
+border-width:
+Border-style: solid / dashed / groove /inset / outset
+Border-color:
+Border: 1px solid red
+Borer-radius: in px  or percentage
+
+Background-color:
+Color:
+
+Padding ----- with in container
+Padding: top right bottom left
+Padding: vertical horizontal
+
+Margin: top right bottom left
+Margin: vertical horizontal
+Margin: 0 auto // horizontal center
+
+Text-align : center
+
+Box-sizing: border box  --> holds the actual size
+
+-----------------------
+
+Universal selector --> * --> applicable for all html elements
+
+*{
+Box-sizing: border-box;
+Padding: 0;
+Margin: 0;
+}
+
+--------------------------
+
+
+Text-align: justify  arranges equal space
+
+Text-decoration: underline  / line-through
+
+Line-height:
+
+Google fonts
+
+-------------------------------
+
+a: hover --> pseudo class
+a: active
+a: visited
+
+Text-transform: capitalize / uppercase
+Transition: all .3s
+
+
+
+position: absolute ---> position related to body
+Position : relative
+Position: fixed
+
+Absolute position relative to element
+
+--------------------------------
+
+Display: flex;
+Justify-content: space-evenly / flex-start/ flex-end / space-between
+Align-items: stretch / baseline
+Flex-direction: row-reverse /
+Flex-wrap: wrap --> it won't cross the limit
+Flex-grow: 1 --> How much flex item will grow relative to the rest of the flex items
+Flex-shrink: 0-->  How much flex item will shrinkrelative to the rest of the flex items
+Flex-flow : flex-direction flex-wrap
+Align-self:
+Flex-basis:100px --> sets the initial length of flex item
+Align-content:
+Flex: flex-grow flex-shrink flex-basis
+
+-----------------------------------
+
+Background-image: url("./path")
+Background-position: center / right
+Heigh: 70vm
+Background-repeat: no-repeat
+Background-size: cover
+Background-attachment: fixed
+
+Background: url(./path) Background-repeat Background-position;
+
+---------------------------------------
+
+ 1em =16px
+1 rem=16px --> depends on what value we set
+Percentage
+Vh= view port height
+Vw = view port width
+
+-------------------------------------------
+
+Laptop =1024px
+Tab = 768 px
+Mobile = 425px 375px 320px
+
+@media screen and (max-width: width){}
+@media screen and (min-width: width) {}
+
+Nav> ul.list> li*3
+
+----------------------------------------
+
+Display: grid
+Grid-template-column: 1fr 1fr 1fr / repeat(auto-fit, minmax(200px,1fr))
+Grid-template-row: 250px 250px
+Grid-column-start:1;
+Grid-column-end:4;
+Grid-row-start:1
+Grid-row-end:3
+Grid-row: start-position/end-position
+Grid-column: start-position/end-position
+Grid area: css-class name =box1
+Grid-template-area : " box1 box2 box3"
+			      " box4 box4 box4";
+Coulmn-gap:px
+Row-gap: px
+Grid gap: columln -gap row-gap
+Justify-items: stretch
+Align-items: stretch
+
+----------------------------------------------------
+
+Pseudo-class:
+
+Div: nth-child(number / odd /even)
+P:hover
+Li:first-child
+Li: last-child
+a: hover --> pseudo class
+a: active
+a: visited
+a: link
+input:checked
+input:disabled
+input:foucs
+
+Pseudo - elements:
+
+P :: first-letter
+P :: before {
+Conetnt:"text added before";
+}
+
+P :: after{
+Content: "content added after";
+}
+
+
+Box-shadow: horizonatl-offset vertical-offset blur color;
+
+Which means: horizontal - offset = right side; vertical - offset = bottom
+
+----------------------
+
+CSS Variables
+
+:root{
+--color-primary: red;
+--color-secondary: blue
+}
+
+Color: var(--color-primary);
+Color: var (--color-secondary);
+
+Background-color: linear-gradient (to right bottom, red, blue)
+Background-color: linear-gradient (120 deg, rgba (0,0,0,0,.5) 0%, rgba (0,0,0,0,.5) 50%, transparent 50%),
+
+
+Order:
+Display: 
+Flex-wrap:
+alignItems:
+Justify-content:
+Border:
+Border-radius:
+Margin:
+Padding:
+Fontsize:
+Fontweight:
+Color:
+Opacity
+Width
+Height
+
+
+
+
+Transition
+
+Transition: all 0.3s
+Transition: all Transition-duration Transition-timing-function Transition-delay
+Transition-property: width (property)
+Transition-duration: 1s;
+Transition-timing-function: ease --> slow start, then fast, then slow end
+Linear --> same speed from start to end
+Ease-in --> slow start
+Ease-out  --> slow out
+Ease-in-out --> slow start and and
+Cubic-bezier (n,n,n,n) 
+Transition-delay: 1s
+
+
+-------------------------------
+
+Transform-Translate 
+  translate --> move from one place to another
+ 
+Transform : translateX(100px)
+Transform: translateY(100px)
+Transform: translate(x-direction, y-direction)
+
+--------------------------------
+
+Transform-scale
+Scale --> it change the size
+
+Transform : scaleX(2) ---> x -direction
+Transform: scaleY(2) --> Y -direction
+Transform : scale(2) --> both x and y direction
+
+--------------------
+
+Transform-rotate
+rotate--> it rotate
+
+Transform :rotateX(60deg) ---> x -direction
+Transform:rotateY(60deg) --> Y -direction
+Transform : rotate(60deg) --> both x and y direction
+
+-----------------------------
+
+Transform-origin : top left;  ---> it reference the position where to trasform
+Transform-origin : top right;
+
+-------------------
+
+Transform-skew
+
+
+Transform :skewX(60deg) ---> x -direction
+Transform:skewY(60deg) --> Y -direction
+Transform : skew(60deg) --> both x and y direction
+
+---------------------
+
+Keyframe
+
+Animation: animation-name animation-duration animation-timing-function animation-delay animation-iteration-count animation-direction
+
+Animation: move 2s ease 1s 1 alternate
+
+@keyframes move {
+
+0%{
+Transform: translateX (0)
+}
+
+100% {
+Transform: translateX(100px)
+}
+
+}
+
+
+
+

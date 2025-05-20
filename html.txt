@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<base target="_blank">
+<link role="icon" href="./images/favicon.png" type="image/png">
+<title></title>
+</head>
+
+<body>
+
+<p> paragraph </p>
+
+<hr>
+
+<h1>34</h1>
+<h2>30</h2>
+<h3>24</h3>
+<h4>20</h4>
+<h5>18</h5>
+<h6>16</h5>
+
+<strong>bold</strong>  <b>bold<b>
+<em> italic </em>  <i>italic</i>
+<mark> yellow background</mark>
+<del> delete </del>
+<u>underlined</u>
+
+--------------------------------
+List:
+<ul type= " disc / square / circle">
+<li> list 1 </li>
+<li> list 2 </li>
+</ul>
+
+<ol reversed>
+<li> list 1 </li>
+<li> list 2 </li>
+<ol>
+
+<img src="./path" alt="alt name">
+
+---------------------------
+
+Audio file:
+
+<audio controls>
+<source src="./path" type="audio/mp3">
+</audio>
+
+------------------------------
+
+Video file:
+
+<video controls width="360px">
+<source src="./path" type="video/mp4">
+</video>
+
+------------------------------
+
+Form controls:
+	1. Text input
+	2. Check boxes
+	3. Radio buttons
+	4. Select box
+	5. File select
+	6. Buttons
+
+
+<form>
+
+<input type="text">
+<input type="password">
+<p> Remember me : <input type="checkbox" checked>
+</p>
+
+<p>
+Age:
+Above 18 <input type="radio"  name="age">
+Above 19 <input type=" radio" name="age">
+</p>
+ name is referencing for set 
+
+Dropdown:
+<p>
+Coding Langauge:
+<select>
+<option>HTMl</option>
+<option selected>CSS</option>
+<option>Javascript</option>
+</select>
+</p>
+
+<p>select file:
+<input type="file">
+</p>
+
+<textarea cols="30" rows="10" >
+
+<p> <button> submit </button> </p>
+</form>
+-----------------------
+
+Table:
+
+<table>
+
+<tr>
+<th>Name</th>
+<th>Age</th>
+<th>Gender</th>
+</tr>
+
+<tr>
+<td>Santosh</td>
+<td>28</td>
+<td>male</td>
+</tr>
+
+<tr>
+<td> jaanu </td>
+<td> 20 </td>
+<td> Female </td>
+</tr>
+
+</table>
+
+----------------------
+Links:
+
+Absolute link:
+<a href="https://youtube.com" target="_blank" rel="noreferrer"> Youtube </a>
+
+Relative link:
+<a href="./fileapath"> link</a>
+
+Image as link:
+<a href="/path">
+<img src="/path" alt="link">
+</a>
+
+Mail:
+<a href="mailto:gsxhg@gamil.com">Email us</a>
+
+Phone no:
+<a href="tel:+2737371"> 2737371 </a>
+
+---------------------------------
+Iframe:
+<iframe src="/path / url" height="300px" width="250px"> 
+
+-----------------------
+
+Emojis:
+<p> &copy; 2020.</p>
+<p> &#128514; emoji </p>
+
+Icons:
+Fontawsome.com
+
+-----------------
+
+Block level elements:
+
+Always starts on a new line and takes up the full width available (stretch out to the left and rights as far as it can)
+
+	1. P
+	2. H1-h6
+	3. Form
+	4. Ul
+	5. Div
+
+Inline elments:
+
+Does not start on a new line and it only takes up as much width as necessary
+	1. A
+	2. Input
+	3. Button
+	4. Img
+	5. Span
+	6. icons
+
+
+</body>
+
+</html>
+
+
+<html>
+
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Layout</title>
+<style></style>
+</head>
+
+<body>
+
+<header>
+
+<nav> </nav>
+</header>
+
+<main>
+<section>
+<div></div>
+</section>
+
+<section>
+<div></div>
+</section>
+
+</main>
+
+<footer>
+<div></div>
+</footer>
+
+</body>
+
+<html>

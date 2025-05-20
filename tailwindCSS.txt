@@ -1,0 +1,69 @@
+Text-cenetr
+Text-lg
+Text-red-10
+Bg-red-100
+H-100
+W-full
+Border-2
+Border-red-100
+Rounded-md
+Mt-2
+My,mx,mr,mb,ml
+Pt-2
+Py,pxpr,pb,pl
+
+Position
+Display
+Flexbox
+Grid
+
+
+Flex
+Justify-end space-x-6
+Item-center
+
+Grid
+Grid-clos-3
+Gap-2
+
+
+Media
+
+Sm- 40rem / 640px
+Md- 48rem / 768 px
+Lg - 64rem / 1024px
+Xl- 80rem / 1280px
+2xl - 96 rem / 1536px
+
+Hidden
+Md:block
+Max-sm:text-center
+Max-[600px]: bg-red-300
+
+ default mode is white
+Dark:bg-balck
+Dark:text-white
+
+
+@theme{
+--color-red:'red'
+}
+
+
+@layer base{ --->elements
+H1{
+@apply Text-red-200
+}
+}
+
+
+@layes component{
+.card{
+@apply text-base
+}
+}
+
+
+@utility flex-cenetr{
+@apply flex flex-center items-center
+}

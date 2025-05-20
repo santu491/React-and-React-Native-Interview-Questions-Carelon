@@ -1,0 +1,214 @@
+Container
+Container-fluid
+
+	Extra Small	Small	Medium	Large	Extra Large
+	 <576 px	>=576px	>=768px	>=992px	>=1200px
+Max width container	Auto	540px	720px	960px	1140px
+Class prefix	.col-	.col-sm-	Col-md	Col-lg	Col-xl
+
+
+h-200 ---> height=200px
+
+Row
+Col-md-6
+Col-sm-4
+Offset-md-4 ==> moves 4 places towards right
+Col-md-*
+Text-center
+Bg-warning
+Bg-danger
+
+Align-items-start
+Aligh-items-center
+Align-items-end
+
+Justify-content-start
+Justify-content-center
+Justify-content-end
+Justify-content-between
+Justify-content-around
+
+Text-left
+Text-right
+Text-center
+Text-justify
+
+Text-sm-left
+Text-md-center
+Text-lg-right
+Text-xi-justify
+
+Bg-primary
+Bg-secondary
+Bg-success
+Bg-danger
+Bg-warning
+Bg-light
+Bg-dark
+Bg-white
+Bg-transparent
+
+
+text-primary
+text-secondary
+text-success
+text-danger
+text-warning
+text-light
+text-dark
+Text-muted
+Text-body
+
+Border
+Border-top
+Border-left
+Border-right
+Border-bottom
+
+Border-0
+Border-1
+Border-2
+Border-3
+Border-4
+Border-5
+
+Border-primary
+Border-secondary
+Border-warning
+Border-danger
+Border-info
+Border-dark
+Border-white
+
+.m(l,t,r,b)-beakpoint-(0,1,2,3,4,5, auto)
+.p(l,t,r,b)-breakpoint-(0,1,2,3,4,5,auto)
+
+.float - (left, right, none)
+
+.d-inline
+.d-block
+.d-inline-block
+.d-table
+.d-table-cell
+.d-flex
+
+.position-static
+.position-relative
+.position-absolute
+.position-fixed
+.position-sticky
+
+.fixed-bottom
+.fixed-top
+
+.sticky-top
+
+
+.align-baseline
+.align-top
+.align-middle
+.align-bottom
+.align-text-top
+.align-text-bottom
+
+.text-capitalize
+.text-lowercase
+.text-uppercase
+
+.font-weight-bold
+.font-weight-bolder
+.font-weight-normal
+.font-weight-light
+.font-weight-lighter
+.font-italic
+
+.text-monospace
+.text-reset
+
+
+.text-wrap
+.text-nowrap
+.text-break
+
+
+.list-inline
+.list-inline-item
+
+.image-fluid
+.image-thumbnail  --> added border around the image
+.rounded
+.rounded-circle
+
+.table
+.table-dark
+.table-striped
+.table-light
+.table-borderless
+.table-danger
+.table-hover ---> changes the background color
+.table-responsive
+
+.btn btn-primary
+.btn btn-danger
+
+.btn btn-ouline-primary
+.btn btn-outline-secondary
+
+.btn btn-block
+.btn btn-lg
+.btn btn-sm
+.btn btn-md
+
+.dropdown-toggle
+.dropdown-menu
+.dropdown-item
+.dropdown-toggle-split
+
+.bread-crumb
+.bread-crumb-item   /. /. /
+
+
+.carousel slide 
+.carousel-inner
+.carousel-item active
+
+
+.navbar navbar-expand-lg navbar-light fixed-top
+.nav-item
+
+
+.form-control
+.form-label
+.form-select
+.form-check
+.form-check-input
+
+
+Accordion
+Alerts
+Badge
+Bread Crumb
+Buttons
+Button group
+Card
+Carousel
+Close button
+Collapse
+Dropdown
+List group
+Modal
+Navbar
+Navs & tabs
+Offcans
+Pagination
+Placeholders
+Popovers
+Progress
+Scrollspy
+Spinners
+Toasts
+Tooltips
+
+
+
+
